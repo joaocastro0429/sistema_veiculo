@@ -1,31 +1,31 @@
-
-
-
 <table class="table table-bordered table-striped">
-  <thead class="table-dark">
-    <tr>
-      <th>Modelo</th>
-      <th>Marca</th>
-      <th>Ano</th>
-      <th>Placa</th>
-      <th>Cor</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @vehicles.each do |vehicle| %>
-    <tr>
-        <td><%= vehicle.model %></td>
-        <td><%= vehicle.brand %></td>
-        <td><%= vehicle.year %></td>
-        <td><%= vehicle.plate %></td>
-        <td><%= vehicle.color %></td>
-        <td>
-            <%= link_to "Ver", vehicle, class: "btn btn-primary btn-sm" %>
-            <%= link_to "Editar", edit_vehicle_path(vehicle), class: "btn btn-warning btn-sm" %>
-            <%= link_to "Excluir", vehicle, method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-danger btn-sm" %>
-        </td>
-    </tr>
-    <%end%>
-  </tbody>
+    <thead class="table-dark">
+      <tr>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @vehicles.each do |vehicle| %>
+      <tr>
+          <td><%= vehicle.model %></td>
+          <td><%= vehicle.brand %></td>
+          <td><%= vehicle.year %></td>
+          <td><%= vehicle.plate %></td>
+          <td><%= vehicle.color %></td>
+          <td>
+              <%= link_to "Ver", vehicle, class: "btn btn-primary btn-sm" %>
+              <%= link_to "Editar", edit_vehicle_path(vehicle), class: "btn btn-warning btn-sm" %>
+              <%= button_to "Excluir", vehicle_path(vehicle), method: :delete, data: { confirm: "Tem certeza que deseja excluir este veículo?" }, class: "btn btn-danger btn-sm" %>              </td>
+                  </tr>
+      <% end %>
+    </tbody>
+  
+    <%= link_to "Novo Veículo", new_vehicle_path, class: "btn btn-success float-start mb-2" %>
+  </table>
+  

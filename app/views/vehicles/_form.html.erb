@@ -1,0 +1,28 @@
+<%= form_with(model: vehicle, local: true, class: "card p-4 shadow") do |form| %>
+  <div class="mb-3">
+    <%= form.label :model, class: "form-label" %>
+    <%= form.text_field :model, value: vehicle.model, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :brand, class: "form-label" %>
+    <%= form.text_field :brand, value: vehicle.brand, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :year, class: "form-label" %>
+    <%= form.number_field :year, value: vehicle.year, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :plate, class: "form-label" %>
+    <%= form.text_field :plate, value: vehicle.plate, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :color, class: "form-label" %>
+    <%= form.text_field :color, value: vehicle.color, class: "form-control" %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>
